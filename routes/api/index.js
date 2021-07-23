@@ -4,6 +4,6 @@ const thoughtRoutes = require('./thought-routes');
 
 // prefixes routes with respective titles
 router.use('/user', userRoutes);
-router.use('/comments', thoughtRoutes);
+//router.use('/thought', thoughtRoutes);
 
 module.exports = router;
