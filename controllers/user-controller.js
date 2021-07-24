@@ -73,6 +73,39 @@ const userController = {
                 res.json(deleteUser);
             })
             .catch(err => res.status(500).json(err));
+    },
+
+    addFriend({ params }, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId },
+            { $push: { friends: params.friendsId } },
+            { new: true }
+        )
+        .then(userFriendData => {
+            if (!userFriendData) {
+                res.status(404).json({ message: 'No user found with this id :(' });
+                return;
+            }
+            res.json(userFriendData);
+        })
+        .catch(err => res.status(500).json(err));
+    },
+
+    removeFriend({ params }, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId },
+            { $pull: { friends: params.friendsId } },
+            { new: true }
+        )
+        .then(userFriendData => {
+            if (!userFriendData) {
+                res.status(404).json({ message: 'No user found with this id :(' });
+                return;
+            }
+            res.json(userFriendData);
+        })
+        .catch(err => res.status(500).json(err));
+        
     }
 }
 
