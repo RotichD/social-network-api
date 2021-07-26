@@ -93,22 +93,6 @@ const thoughtController = {
         .catch(err => res.status(500).json(err));
     },
 
-    /*createReaction1({ params, body }, res) {
-        Thought.findOneAndUpdate(
-            { _id: params.thoughtId},
-            { $push: { reactions: body } }, //reac.create?
-            { new: true, runValidators: true }
-            )
-            .then(thoughtReactionData => {
-                if (!thoughtReactionData) {
-                    res.status(404).json({ message: 'No thought found with this id :( '});
-                    return;
-                }
-                res.json(thoughtReactionData);
-            })
-            .catch(err => res.status(500).json(err));
-    },*/
-
     createReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
