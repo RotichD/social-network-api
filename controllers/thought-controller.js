@@ -3,6 +3,10 @@ const { User, Thought } = require('../models');
 const thoughtController = {
     getAllThoughts(req, res) {
         Thought.find({})
+                .populate({ 
+                path: 'reactions',
+                select: { _id: false, __v: false } 
+                })
                 .select('-__v')
                 .sort({ _id: -1})
                 .then(dbUserData => res.json(dbUserData))
