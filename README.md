@@ -14,11 +14,26 @@
 - Clone this repository
 - Install dependencies: run ```npm install```
 - Start the server: run ```npm start```
-## Usage
-Please watch this demonstration video as this project is not deployed. (Back-end Only)
-    ```md
-    [YouTube Demo Video]()
-    ```
+## Usage [YouTube Demo Video]()
+### API Endpoints/Routes
+#### Users
+- ```[POST] /api/user/``` - Creates a new user
+- ```[GET] /api/user/``` - Retrieves all users from database
+- ```[GET] /api/user/<user's id>``` - Retrieves specific user by id
+- ```[PUT] /api/user/<user's id>``` - Updates specfic user by id
+- ```[DEL] /api/user/<user's id>``` - Deletes specific user by id
+##### Friends
+- ```[POST] /api/user/<user's id>/friends/<friend's id>``` - Adds friend's id to user's friends array
+- ```[DEL] /api/user/<user's id>/friends/<friend's id>``` - Removes friend's id from user's friends array
+#### Thoughts
+- ```[POST] /api/thought/``` - Adds thoughts (comments) utilizes username and userid in body (JSON)
+- ```[GET] /api/thought/``` - Retrieves all thoughts from database
+- ```[GET] /api/thought/<thought's id>``` - Retrieves specific thought by id
+- ```[PUT] /api/thought/<thought's id>``` - Update specific thought by id
+- ```[DEL] /api/thought/<thought's id>``` - Deletes specific thought by id
+##### Reactions
+-```[POST] /api/thought/<thought's id>/reactions``` - Add's reaction to thought by id
+-```[DELETE] /api/thought/<thought's id>/<reaction's id>```- Deletes specific reaction 
 ## Credits
 - [Express](https://www.npmjs.com/package/express) Server and Routing
 - [MongoDB](https://www.mongodb.com) NoSql Database
