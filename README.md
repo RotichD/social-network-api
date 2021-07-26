@@ -1,5 +1,6 @@
 # Social Network API
 ## Description
+- Simple Back End RESTful API for Social Networking App
 - I was motivated by my desire to complete a backend project from scratch.
 - I built this project to better understand the relationship between the Model and the Controller in the MVC paradigm. 
 - This project allows users to post thoughts and reactions to those thoughts. Users will also have the ability to add and remove friends.
@@ -14,7 +15,7 @@
 - Clone this repository
 - Install dependencies: run ```npm install```
 - Start the server: run ```npm start```
-## Usage [YouTube Demo Video]()
+## Usage: [YouTube Demo Video](https://youtu.be/6LgdZQ4D5Fs)
 ### API Endpoints/Routes
 #### Users
 - ```[POST] /api/user/``` - Creates a new user
